@@ -26,6 +26,11 @@ dishRouter.route('/')
 });
 
 dishRouter.route('/:dishId')
+.all(function(req, res, next) { // Assignment 1sdfdsfsdfsd
+
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    next();
+})
 .get((req,res,next) => {
     res.end('Will send details of the dish: ' + req.params.dishId +' to you!');
 })

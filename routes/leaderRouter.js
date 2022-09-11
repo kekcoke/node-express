@@ -26,6 +26,10 @@ leaderRouter.route('/')
 })
 
 leaderRouter.route('/:leaderId')
+.all(function(req, res, next) { // Assignment 1sdfdsfsdfsd
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    next();
+})
 .get((req,res,next) => {
     res.end('Will send details of the leader: ' + req.params.leaderId +' to you!');
 })
